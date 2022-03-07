@@ -11,18 +11,39 @@ body {
 .App-header {
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.Account-box {
   border: 1px white solid;
-  margin: 2%;
-  border-radius: 10px;
-  font-size: 40px;
 }
-
 .Main-content {
   border: 1px white solid;
   padding: 10%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  column-width: 20%;
+  height: 90%;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  scroll-behavior: smooth;
+}
+
+.Account-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px white solid;
+  width: 20%;
+}
+
+.Account-button {
+  border: 4px white solid;
+  margin: 2%;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 100%;
+}
+
+.Items-grid {
+  border: 1px white solid;
+}
+
+.Item {
+  color: white;
+  border: 1px white solid;
 }

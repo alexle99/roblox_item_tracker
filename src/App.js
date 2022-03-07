@@ -1,37 +1,57 @@
 import "./App.css";
+import { useState } from "react";
 
-const AccountBox = ({ text }) => {
-  const handleClick = () => {
-    console.log("ASDF " + text);
-  };
+const AccountButton = ({ text, onClick }) => {
   return (
-    <div className="Account-box" onClick={handleClick}>
-      <p>{text}</p>
-    </div>
+    <button className="Account-button" onClick={onClick}>
+      {text}
+    </button>
   );
 };
 
+const Item = ({ text }) => {
+  return <p className="Item">{text}</p>;
+};
+
 function App() {
+  const [accounts, setAccounts] = useState([
+    { name: "asdf", items: ["asdfasdfasdf", "fafafafafafaf"] },
+    { name: "zxcv", items: ["zxcvzxcvzxcv", "zvzvzvzvzvzvz"] },
+    { name: "qwer", items: ["qwerqwerqwer", "qrqrqrqrqrqrq"] }
+  ]);
+  const [selectedAccount, setSelectedAccount] = useState({});
+
+  const accountClick = account => {
+    // console.log(`Selected Amount: ${selectedAccount.name === undefined}`);
+    setSelectedAccount(account);
+  };
+
   return (
     <div className="App">
       <div className="App-header">
-        <h1>Accounts</h1>
+        <h1>Item Tracker</h1>
       </div>
       <div className="Main-content">
-        <AccountBox text="asdf" />
-        <AccountBox text="zxcv" />
-        <AccountBox text="qwer" />
-        <AccountBox text="wert" />
-        <AccountBox text="sdfg" />
-        <AccountBox text="xcvb" />
-        <AccountBox text="cvbn" />
-        <AccountBox text="zxcv" />
-        <AccountBox text="qwer" />
-        <AccountBox text="wert" />
-        <AccountBox text="sdfg" />
-        <AccountBox text="xcvb" />
-        <AccountBox text="cvbn" />
-        <AccountBox text="zxcv" />
+        <div className="Account-list">
+          {accounts.map(account => {
+            return (
+              <AccountButton
+                key={account.name}
+                text={account.name}
+                onClick={() => accountClick(account)}
+              />
+            );
+          })}
+        </div>
+        <div className="Items-grid">
+          {selectedAccount.name !== undefined ? (
+            selectedAccount.items.map(item => {
+              return <Item text={item} />;
+            })
+          ) : (
+            <p>chicken</p>
+          )}
+        </div>
       </div>
     </div>
   );
