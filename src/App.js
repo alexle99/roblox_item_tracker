@@ -4,7 +4,7 @@ import { useState } from "react";
 const AccountButton = ({ text, onClick }) => {
   return (
     <button className="Account-button" onClick={onClick}>
-      {text}
+      <div className="Button-text">{text}</div>
     </button>
   );
 };
@@ -15,9 +15,26 @@ const Item = ({ text }) => {
 
 function App() {
   const [accounts, setAccounts] = useState([
-    { name: "asdf", items: ["asdfasdfasdf", "fafafafafafaf"] },
-    { name: "zxcv", items: ["zxcvzxcvzxcv", "zvzvzvzvzvzvz"] },
-    { name: "qwer", items: ["qwerqwerqwer", "qrqrqrqrqrqrq"] }
+    {
+      name: "fdsa",
+      items: ["asdfasdf", "fafafafaf"]
+    },
+    {
+      name: "qwerasdffa",
+      items: ["qwerqwer", "qrqrqrqrqr"]
+    },
+    {
+      name: "zxcvasdfasdfasdfasdf",
+      items: ["zxcvzxcv", "zvzvzvzvzv"]
+    },
+    {
+      name: "wert",
+      items: ["wertwert", "wtwtwtwtwt"]
+    },
+    {
+      name: "sdfg",
+      items: ["sdfgsdfg", "sgsgsgsgsg"]
+    }
   ]);
   const [selectedAccount, setSelectedAccount] = useState({});
 
@@ -33,6 +50,7 @@ function App() {
       </div>
       <div className="Main-content">
         <div className="Account-list">
+          <p className="Account-list-header">Accounts</p>
           {accounts.map(account => {
             return (
               <AccountButton

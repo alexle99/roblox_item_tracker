@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   color: white;
-  padding: 5%;
+  /* padding: 5%; */
 }
 
 body {
@@ -9,38 +9,54 @@ body {
 }
 
 .App-header {
-  font-size: calc(10px + 2vmin);
+  /* font-size: calc(10px + 2vmin); */
+  font-size: 1em;
   color: white;
   border: 1px white solid;
 }
+
 .Main-content {
   border: 1px white solid;
-  padding: 10%;
+  padding: 5%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-width: 20%;
-  height: 90%;
-  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-  scroll-behavior: smooth;
+  grid-template-columns: 2fr 3fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.Account-list-header {
+  font-size: 2em;
+  border: 1px white solid;
 }
 
 .Account-list {
   display: flex;
   flex-direction: column;
   border: 1px white solid;
-  width: 20%;
+  width: auto;
+  align-items: center;
 }
 
 .Account-button {
   border: 4px white solid;
-  margin: 2%;
+  background-color: grey;
   border-radius: 10px;
-  font-size: 20px;
-  width: 100%;
+  font-size: 2em;
+  width: fit-content;
+  margin-bottom: 5%;
+  padding: 5%;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.Button-text {
+  border: 1px white solid;
+  width: fit-content;
 }
 
 .Items-grid {
   border: 1px white solid;
+  width: fit-content;
 }
 
 .Item {
