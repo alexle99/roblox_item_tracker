@@ -4,17 +4,106 @@ import { useState } from "react";
 const AccountButton = ({ text, onClick }) => {
   return (
     <button className="Account-button" onClick={onClick}>
-      <div className="Button-text">{text}</div>
+      <p className="Account-text">{text}</p>
     </button>
   );
 };
 
 const Item = ({ text }) => {
-  return <p className="Item">{text}</p>;
+  return (
+    <div className="Item">
+      <p className="Item-text">{text}</p>
+    </div>
+  );
 };
 
 function App() {
   const [accounts, setAccounts] = useState([
+    {
+      name: "fdsa",
+      items: [
+        "asdfasdf",
+        "fafafafaf",
+        "fjfjjfjfjfjfjjf",
+        "fjfjjfowiejfowiefjoiwejf",
+        "wwwwwwwwwwwww",
+        "zzzzzzzzzz",
+        "d",
+        "zzzzzzzzzz",
+        "zzzzzzzzzz",
+        "fffffffffffffffffffffffffffffffffffffff",
+        "zzzzzzzzzz",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo",
+        "oooooooooooooooooo"
+      ]
+    },
+    {
+      name: "qwerasdffa",
+      items: [
+        "qwerqwer",
+        "qrqrqrqrqr",
+        "qwerqwer",
+        "qrqrqrqrqr",
+        "qwerqwer",
+        "qrqrqrqrqr",
+        "qwerqwer",
+        "qrqrqrqrqr",
+        "qwerqwer",
+        "qrqrqrqrqr"
+      ]
+    },
+    {
+      name: "zxcvasdfasdfasdfasdf",
+      items: ["zxcvzxcv", "zvzvzvzvzv"]
+    },
     {
       name: "fdsa",
       items: ["asdfasdf", "fafafafaf"]
@@ -28,12 +117,24 @@ function App() {
       items: ["zxcvzxcv", "zvzvzvzvzv"]
     },
     {
-      name: "wert",
-      items: ["wertwert", "wtwtwtwtwt"]
+      name: "fdsa",
+      items: ["asdfasdf", "fafafafaf"]
     },
     {
-      name: "sdfg",
-      items: ["sdfgsdfg", "sgsgsgsgsg"]
+      name: "qwerasdffa",
+      items: ["qwerqwer", "qrqrqrqrqr"]
+    },
+    {
+      name: "qwerasdffa",
+      items: ["qwerqwer", "qrqrqrqrqr"]
+    },
+    {
+      name: "qwerasdffa",
+      items: ["qwerqwer", "qrqrqrqrqr"]
+    },
+    {
+      name: "qwerasdffa",
+      items: ["qwerqwer", "qrqrqrqrqr"]
     }
   ]);
   const [selectedAccount, setSelectedAccount] = useState({});
@@ -45,30 +146,34 @@ function App() {
 
   return (
     <div className="App">
-      <div className="App-header">
-        <h1>Item Tracker</h1>
-      </div>
+      <div className="App-header">Item Tracker</div>
       <div className="Main-content">
-        <div className="Account-list">
-          <p className="Account-list-header">Accounts</p>
-          {accounts.map(account => {
-            return (
-              <AccountButton
-                key={account.name}
-                text={account.name}
-                onClick={() => accountClick(account)}
-              />
-            );
-          })}
+        <div className="Account-bar">
+          <p className="Header">Accounts</p>
+          <div className="Account-list">
+            {accounts.map(account => {
+              return (
+                <AccountButton
+                  key={account.name}
+                  text={account.name}
+                  onClick={() => accountClick(account)}
+                />
+              );
+            })}
+          </div>
         </div>
-        <div className="Items-grid">
-          {selectedAccount.name !== undefined ? (
-            selectedAccount.items.map(item => {
-              return <Item text={item} />;
-            })
-          ) : (
-            <p>chicken</p>
-          )}
+        <div style={{ borderLeft: "1px white solid" }}></div>
+        <div className="Items">
+          <p className="Header">Items</p>
+          <div className="Items-grid">
+            {selectedAccount.name !== undefined ? (
+              selectedAccount.items.map(item => {
+                return <Item text={item} />;
+              })
+            ) : (
+              <p>chicken</p>
+            )}
+          </div>
         </div>
       </div>
     </div>
