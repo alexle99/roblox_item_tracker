@@ -1,11 +1,11 @@
 import "./DropDownItems.css";
 import { useState, useRef, useEffect } from "react";
 
-const AddItem = ({ opened, onClick }) => {
+const ToggleButton = ({ opened, onClick }) => {
   return (
     <div>
       <button
-        className="Add-Item-Button"
+        className="Toggle-Button"
         onClick={onClick}
         style={{ background: opened ? "red" : "rgb(30, 30, 30)" }}
       >
@@ -56,7 +56,7 @@ export const DropDown = ({ items }) => {
 
   return (
     <div ref={drop} className="Dropdown">
-      <AddItem opened={open} onClick={addItemClick} />
+      <ToggleButton opened={open} onClick={addItemClick} />
       {open && <ItemList items={items} onClick={itemClicked} />}
     </div>
   );

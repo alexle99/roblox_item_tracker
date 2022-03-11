@@ -24,6 +24,11 @@ body {
   font-size: 3em;
   color: white;
   border-bottom: 2px white solid;
+  position: relative;
+}
+
+.Header {
+  font-size: 2em;
 }
 
 .Main-content {
@@ -41,10 +46,6 @@ body {
   flex-direction: column;
   width: 90%;
   align-items: center;
-}
-
-.Header {
-  font-size: 2em;
 }
 
 .Account-list {

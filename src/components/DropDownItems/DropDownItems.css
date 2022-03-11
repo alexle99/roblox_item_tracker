@@ -1,4 +1,4 @@
-.Add-Item-Button {
+.Toggle-Button {
     color: white;
     background-color: rgb(30, 30, 30);
     border: 2px gray solid;
@@ -10,6 +10,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    cursor: pointer;
 }
 
 .Dropdown-List {
