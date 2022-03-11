@@ -1,21 +1,8 @@
 import "./App.css";
 import { useState } from "react";
-
-const AccountButton = ({ text, onClick }) => {
-  return (
-    <button className="Account-button" onClick={onClick}>
-      <p className="Account-text">{text}</p>
-    </button>
-  );
-};
-
-const Item = ({ text }) => {
-  return (
-    <div className="Item">
-      <p className="Item-text">{text}</p>
-    </div>
-  );
-};
+import { AccountButton } from "./components/AccountButton/AccountButton.js";
+import { ItemButton } from "./components/ItemButton/ItemButton.js";
+import { DropDown } from "./components/DropDownItems/DropDownItems.js";
 
 function App() {
   const [accounts, setAccounts] = useState([
@@ -86,7 +73,7 @@ function App() {
       ]
     },
     {
-      name: "qwerasdffa",
+      name: "qwerasdfffdfasdfasdfasdfa",
       items: [
         "qwerqwer",
         "qrqrqrqrqr",
@@ -138,10 +125,22 @@ function App() {
     }
   ]);
   const [selectedAccount, setSelectedAccount] = useState({});
+  const itemsList = [
+    "item1",
+    "item2",
+    "item3",
+    "item4",
+    "item5",
+    "item6",
+    "item7"
+  ];
 
   const accountClick = account => {
-    // console.log(`Selected Amount: ${selectedAccount.name === undefined}`);
     setSelectedAccount(account);
+  };
+
+  const itemClick = item => {
+    console.log("ITEMCLICKED: " + item);
   };
 
   return (
@@ -164,14 +163,19 @@ function App() {
         </div>
         <div style={{ borderLeft: "1px white solid" }}></div>
         <div className="Items">
-          <p className="Header">Items</p>
+          <div className="Items-header">
+            <p className="Header" style={{ flex: 1 }}>
+              Inventory
+            </p>
+            <DropDown items={itemsList} />
+          </div>
           <div className="Items-grid">
             {selectedAccount.name !== undefined ? (
               selectedAccount.items.map(item => {
-                return <Item text={item} />;
+                return <ItemButton text={item} onClick={itemClick} />;
               })
             ) : (
-              <p>chicken</p>
+              <></>
             )}
           </div>
         </div>

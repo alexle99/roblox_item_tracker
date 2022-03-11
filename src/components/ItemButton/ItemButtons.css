@@ -1,0 +1,13 @@
+.Item {
+    color: white;
+    background-color: rgb(30, 30, 30);
+    border: 2px solid gray;
+    border-radius: 10px;
+    font-size: 1.7em;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 5%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

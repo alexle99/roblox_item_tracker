@@ -7,7 +7,6 @@
   height: 100%;
   margin: 0;
   padding: 0;
-  /* height: 100vh; */
   overflow-x: hidden;
 }
 
@@ -15,8 +14,6 @@
   text-align: center;
   color: white;
   font-family: Consolas;
-  /* overflow-y: hidden;
-  overflow-x: hidden; */
 }
 
 body {
@@ -24,7 +21,6 @@ body {
 }
 
 .App-header {
-  /* font-size: calc(10px + 2vmin); */
   font-size: 3em;
   color: white;
   border-bottom: 2px white solid;
@@ -35,11 +31,9 @@ body {
   padding: 5%;
   padding-top: 0;
   display: grid;
-  /* grid-template-columns: 2fr 3fr; */
   grid-template-columns: 26% 3% 77%;
   align-items: top;
   justify-content: center;
-  /* height: 80vh; */
 }
 
 .Account-bar {
@@ -59,42 +53,8 @@ body {
   /* height: 75vh; */
 }
 
-.Account-button {
-  border: 3px white solid;
-  background-color: rgb(39, 39, 39);
-  border-radius: 10px;
-  font-size: 2em;
-  width: 100%;
-  height: 7vh;
-  margin-bottom: 5%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.Account-button:focus {
-  border: 3px white solid;
-  background-color: grey;
-  border-radius: 10px;
-  font-size: 2em;
-  width: 100%;
-  margin-bottom: 5%;
-  display: inline-flex;
-  justify-content: center;
-}
-
-.Account-text {
-  width: 100%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  color: white;
-  /* font-family: Consolas; */
-}
-
 .Items-grid {
   width: 70vw;
-  /* height: 75vh; */
   display: grid;
   grid-template-columns: repeat(4, 20%);
   flex-direction: column;
@@ -102,22 +62,8 @@ body {
   align-items: space-between;
 }
 
-.Item {
-  border: 2px solid white;
-  border-radius: 10px;
-  width: 1fr;
-  height: 5vh;
+.Items-header {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1vh;
-}
-
-.Item-text {
-  color: white;
-  height: fit-content;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 1.7em;
+  flex-direction: row;
+  justify-content: flex-end;
 }
